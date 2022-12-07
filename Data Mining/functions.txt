@@ -1,0 +1,57 @@
+1.Correlation Analysis:(select 2 attributes. Lets say selected attributes are: x & y)
+Chi square test:
+	def chi2test_with_x_y():
+		table = [	x,y  ]
+		stat, p, dof, expected = chi2_contingency(table)
+		prob = 0.95
+		critical = chi2.ppf(prob, dof)
+		if abs(stat) >= critical:
+			print("Dependent (reject H0)")
+		else:
+			print("Independent (fail to reject H0)")
+		print(str(expected))
+Pearson Coefficient:
+	def pearsoncoef_with_x_y():
+		corr, _ = pearsonr(x, y)
+		str=""
+		str+='Pearsons correlation: %.3f' % corr
+		if(corr<0):
+			str+="\nNegative correlation exists"
+		if(corr>0):
+			str+="\nPositive correlation exists"
+		if(corr==0):
+			str+="\nNo correlation exists"
+		print(str)
+Covariance:
+	def covariance_with_x_y():
+		cov_mat = np.stack((x, y), axis = 0)
+		print(str(cov_mat))
+		cov_mat = np.stack((x, y), axis = 1)
+		print(str(cov_mat))
+
+
+2.Normalization:(Select only 1 attribute,selected attribute:x)
+Min-Max Normalization:
+	def min_max_norm_x():
+		x_min_max_scaled = x.copy()
+		x_min_max_scaled = (x_min_max_scaled - x_min_max_scaled.min()) / (x_min_max_scaled.max() - x_min_max_scaled.min())
+		plt.scatter(x_min_max_scaled, x_min_max_scaled)
+		plt.show()
+		print(str(x_min_max_scaled))
+
+Z-score normalization:
+	def z_score_norm_x():
+		x_z_scaled = x.copy()
+		x_z_scaled = (x_z_scaled - x_z_scaled.mean()) / x_z_scaled.std()
+		plt.scatter(x_z_scaled, x_z_scaled)
+		plt.show()
+		print(str(x_z_scaled))
+
+Normalization by decimal scaling:
+	def dec_scale_norm_x():
+		p = x.max()
+		q = len(str(abs(p)))
+		x_des_scaled = x/10**q
+		plt.scatter(x_des_scaled, x_des_scaled)
+		plt.show()
+		print(str(x_des_scaled))

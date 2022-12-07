@@ -1,0 +1,12 @@
+Cluster assignments completed for all 7 instances. Here they are:
+[0. 0. 0. 0. 0. 0. 0.]
+
+Now calculating the new centroids...
+
+New centroids have been created. Here they are:
+[]
+
+Cluster membership is unchanged. Stopping criteria has been met.
+
+Calculating the Silhouette Coefficients. Please wait...
+

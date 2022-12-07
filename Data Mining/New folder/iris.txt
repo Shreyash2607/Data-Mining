@@ -1,0 +1,10 @@
+----------------------------------------------------------
+K-means Summary Statistics (Testing)
+----------------------------------------------------------
+Data Set : E:/Fourth year/DM/asg4_5/iris.txt
+
+Number of Instances : 150
+
+Value for k : 3
+Silhouette Coefficient : 0.49485800378829764
+Accuracy : 56.666666666666664%
